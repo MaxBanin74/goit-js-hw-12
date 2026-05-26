@@ -8,11 +8,103 @@
 @import url('./reset.css');
 @import url('./base.css');
 @import url('./container.css');
-@import url('./animations.css');
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.form {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.form input,
+.form button {
+  font-size: 20px;
+}
+
+.gallery {
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.gallery-item {
+  width: 360px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid black;
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+}
+
+.gallery-image {
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+}
+
+.comment-list {
+  margin: 5px 0;
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  gap: 20px;
+  line-height: 1;
+}
+
+.comment-title {
+  font-weight: bold;
+}
+
+.comment-title,
+.comment-value {
+  text-align: center;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-width: 3px;
+  border-style: dashed solid solid dotted;
+  border-color: #ff3d00 #ff3d00 transparent #ff3d00;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 20px;
+  top: 31px;
+  border: 10px solid transparent;
+  border-right-color: #ff3d00;
+  transform: rotate(-40deg);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
