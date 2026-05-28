@@ -76,6 +76,7 @@ async function onMoreBtnClick(event) {
   try {
     const photo = await getImagesByQuery(query, curPage);
     createGallery(photo.hits);
+    scrollGallery(1);
     checkMoreButton();
   } catch (error) {
     console.error(error);
